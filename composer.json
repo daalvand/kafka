@@ -1,0 +1,33 @@
+{
+    "name": "daalvand/kafka",
+    "description": "This package is for produce and consume from kafka",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Matthew",
+            "email": "mdaalvand@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.4|^8.0",
+        "ext-rdkafka": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Daalvand\\Kafka\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Daalvand\\Kafka\\KafkaServiceProvider"
+            ],
+            "aliases": {
+                "KafkaProducer": "Daalvand\\Kafka\\Facades\\Producer",
+                "KafkaConsumer": "Daalvand\\Kafka\\Facades\\Consumer"
+            }
+        }
+    }
+}
